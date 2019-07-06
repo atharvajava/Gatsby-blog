@@ -1,22 +1,20 @@
 import React from "react"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
+import profilepic from "../images/profilepic.jpg"
 
-const Post =({ title, author, path, date, body }) => {
+const Post =({ title, author, path, date, body, fluid }) => {
     return (
         <div className="card">
             <Link to={path}>
-            <div className="card-image">
-                <figure className="image is-4by3">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image"/>
-                </figure>
-            </div>
+                <Img className="card-image" fluid={fluid}/>
             </Link>
             <div className="card-content">
             <Link to={path}>
                 <div className="media">
                     <div className="media-left">
                         <figure className="image is-48x48">
-                        <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image"/>
+                        <img src={profilepic} alt="Placeholder image"/>
                         </figure>
                     </div>
                     <div className="media-content">
