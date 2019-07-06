@@ -46,29 +46,29 @@ const Header = ({ siteTitle }) => {
 
       <div id="navbarBasicExample" className="navbar-menu">
     <div className="navbar-end">
-      <a href="/" className="navbar-item">
+      <Link to="/" className="navbar-item button">
         Home
-      </a>
+      </Link>
 
-      <a href="/about"  className="navbar-item">
+      <Link to="/about"  className="navbar-item button">
         About
-      </a>
+        </Link>
 
-      <a href="/portfolio" className="navbar-item">
+      <Link to="/portfolio" className="navbar-item button">
         Portfolio
-      </a>
+        </Link>
 
-      <a href="/blog" className="navbar-item">
+      <Link to="/blog" className="navbar-item button">
         Blog
-      </a>
+        </Link>
 
-      <a href="/cv"  className="navbar-item">
+      <Link to="/cv"  className="navbar-item button">
         CV
-      </a>
+        </Link>
 
-      <a href="/login" className="navbar-item">
+      <Link to="/login" className="navbar-item button">
         Login
-      </a>
+      </Link>
       
     </div>
   </div>
