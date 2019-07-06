@@ -1,0 +1,12 @@
+@import "~bulma/bulma.sass";
+@import "./components/header.scss";
+@import "./components//index.scss";
+
+@font-face {
+    font-family:"Hack";
+    src: url("./fonts/Hack/Hack\ Regular\ Nerd\ Font\ Complete.ttf") /* TTF file for CSS3 browsers */
+}
+
+body {
+    font-family: "Hack" , sans-serif;
+}
