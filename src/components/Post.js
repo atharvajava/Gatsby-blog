@@ -2,19 +2,20 @@ import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import profilepic from "../images/profilepic.jpg"
+import { slugify } from "../util/utilityFunction"
 
-const Post =({ title, author, path, date, body, fluid }) => {
+const Post =({ title, author, slug, date, body, fluid, tags }) => {
     return (
         <div className="card">
-            <Link to={path}>
+            <Link to={slug}>
                 <Img className="card-image" fluid={fluid}/>
             </Link>
             <div className="card-content">
-            <Link to={path}>
+            <Link to={slug}>
                 <div className="media">
                     <div className="media-left">
                         <figure className="image is-48x48">
-                        <img src={profilepic} alt="Placeholder image"/>
+                        <img src={profilepic} alt="profile pic"/>
                         </figure>
                     </div>
                     <div className="media-content">
@@ -26,9 +27,15 @@ const Post =({ title, author, path, date, body, fluid }) => {
 
                 <div className="content">
                     {body}
+                    <br/><br/>
+                    <time className="has-text-right" dateTime="2016-1-1">{date}
                     <br/>
-                    <time dateTime="2016-1-1">{date}</time>
-                    <Link className="media-right" to={path}>Read More</Link>
+                    {tags.map((tag,index) =>(
+                        <Link key={index    } to={`/tag/${slugify(tag)}`}>
+                            <span className="tag is-black is-uppercase">{tag}</span>&nbsp;
+                        </Link>
+                    ))}</time>
+                    <Link className="media-right button" to={slug}>Read More</Link>
                 </div>
             </div>
         </div>

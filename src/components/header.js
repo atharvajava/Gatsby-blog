@@ -34,14 +34,14 @@ const Header = ({ siteTitle }) => {
   return (
   <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <a className="navbar-item" href="https://atharvapandey.com">
-          <img  alt="" src={icon} width="40" height="28"/><span className="brand-icon">THARVA PANDEY</span>
-        </a>
-        <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <Link to="/" className="navbar-item" href="https://atharvapandey.com">
+          <img  alt="A" src={icon} width="40" height="28"/><span className="brand-icon">THARVA PANDEY</span>
+        </Link>
+        <span role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
-        </a>
+        </span>
       </div>
 
       <div id="navbarBasicExample" className="navbar-menu">

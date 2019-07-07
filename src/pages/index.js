@@ -12,7 +12,7 @@ const IndexPage = () => {
   <Layout>
     <SEO title="Home" />
     <p className="is-size-5-mobile has-text-centered">Full Stack Web Developer
-    <p className="is-size-7-mobile has-text-centered index-title-description">Have a look at my portfolio and job history.</p></p>
+    <br/><span className="is-size-7-mobile has-text-centered index-title-description">Have a look at my portfolio and job history.</span></p>
     <img alt="" src={intro}/>
     <p className="is-size-6-mobile has-text-justified">Welcome to Atharva's blog. Get informed, collaborate and discover projects I have worked on through the years!</p><br/>  
     <Typed
