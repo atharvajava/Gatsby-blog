@@ -7,6 +7,8 @@
 // You can delete this file if you're not using it
 
 const { slugify } = require("./src/util/utilityFunction")
+const path= require("path")
+
 
 exports.onCreateNode = ({ node, actions}) => {
     const { createNodeField } = actions
