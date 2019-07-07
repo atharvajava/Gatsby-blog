@@ -30,8 +30,8 @@ const Post =({ title, author, slug, date, body, fluid, tags }) => {
                     <br/><br/>
                     <time className="has-text-right" dateTime="2016-1-1">{date}
                     <br/>
-                    {tags.map((tag,index) =>(
-                        <Link key={index    } to={`/tag/${slugify(tag)}`}>
+                    {tags.map((tag) =>(
+                        <Link key={tag} to={`/tag/${slugify(tag)}`}>
                             <span className="tag is-black is-uppercase">{tag}</span>&nbsp;
                         </Link>
                     ))}</time>
