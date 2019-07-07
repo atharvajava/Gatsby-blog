@@ -5,3 +5,30 @@
 .single-blog-content{
     margin-top:20px;
 }
+
+.social-share-chirps {
+    text-align: left;
+    margin-top:20px;
+    font-size:25px;
+    .facebook{
+        margin:20px;
+        color:#3C5A99;
+    }
+    .twitter {
+        margin:20px;
+        color:#33CCFF;
+    }
+    .linked-in{
+        margin:20px;
+        color:#4875B4;
+    }
+    .back {
+        float:right;
+        text-align: right;
+        font-size:14px;
+    }
+}
+
+.time-tag{
+    margin-left:20px;
+}
