@@ -6,10 +6,12 @@ import SEO from "../components/seo"
 import Img from "gatsby-image"
 import {slugify} from "../util/utilityFunction"
 import ReactHtmlParser from "react-html-parser"
+import authors from "../util/authors"
 
 const SinglePost=({data})=>{
     const post = data.markdownRemark.frontmatter
-    
+    const author = authors.find(x=> x.name === post.author)
+    console.log(data)
     return (
         <Layout>
             <SEO title={post.title}/>
@@ -35,7 +37,7 @@ const SinglePost=({data})=>{
                 </div>
                 </div>
                 <div className="is-hidden-mobile column is-one-third blog-sidebar">
-                    <Sidebar/>
+                    <Sidebar author={author} authorImageFluid={data.file.childImageSharp.fluid}/>
                 </div>
             </div>
         </Layout>
@@ -43,7 +45,7 @@ const SinglePost=({data})=>{
 }
 
 export const postQuery = graphql `
-query blogPostBySlug($slug:String!){
+query blogPostBySlug($slug: String! , $imageUrl: String!){
     markdownRemark(fields:{ slug: { eq: $slug }}){
         id
         html
@@ -58,8 +60,15 @@ query blogPostBySlug($slug:String!){
                         ...GatsbyImageSharpFluid
                     }
                 }
-            }
+            }       
         }
     }
+    file(relativePath: { eq: $imageUrl }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
 }`
 export default SinglePost

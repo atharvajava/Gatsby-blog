@@ -1,7 +1,25 @@
 import React from "react"
+import Img from "gatsby-image"
 
-const Sidebar = () => (
+const Sidebar = ({author, authorImageFluid}) => (
     <>
+    {author && (
+        <div className="card">
+            <div className="card-image">
+                <Img fluid={authorImageFluid}></Img>
+            </div>
+            <div className="card-title">
+                <p className="has-text-centered is-size-4">{author.name}</p>
+            </div>
+            <div className="card-content">
+                {author.bio}
+            </div>
+            <div className="has-text-centered is-size-3">
+                <a href={author.github}></a>&nbsp;
+                <a href={author.linkedin}></a>&nbsp;
+            </div>
+        </div>
+    )}
     <div className="card">
         <div className="card-content">
         <p className="is-size-4 has-text-centered">
