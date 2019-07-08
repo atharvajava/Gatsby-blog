@@ -14,7 +14,7 @@ const _=require("lodash")
 exports.onCreateNode = ({ node, actions}) => {
     const { createNodeField } = actions
     if(node.internal.type === "MarkdownRemark") {
-        const slugFromTitle= slugify(node.frontmatter.title)
+        const slugFromTitle= slugify("/"+node.frontmatter.title+"/")
         createNodeField({
             node,
             name:"slug",
@@ -103,13 +103,13 @@ exports.createPages= ({actions,graphql})=> {
         })
 
 
-        const postsPerPage = 1
+        const postsPerPage = 10
         const numberOfPages = Math.ceil(posts.length/ postsPerPage)
         
         Array.from({ length: numberOfPages }).forEach((_, index) => {
             const isFirstPage = index === 0 
             const currentPage = index + 1
-            console.log(currentPage)
+            
             if(isFirstPage) return
 
             createPage({
@@ -118,7 +118,8 @@ exports.createPages= ({actions,graphql})=> {
                 context: {
                     limit: postsPerPage,
                     skip: index * postsPerPage,
-                    currentPage
+                    currentPage,
+                    numberOfPages
                 }
             })
         })

@@ -1,19 +1,21 @@
-import React from "react"
+import React , { useState } from "react"
 
-import Layout from "../components/layout"
+import BlogWrapper from "../components/BlogWrapper"
 import SEO from "../components/seo"
 import { graphql,StaticQuery } from "gatsby";
 import Post from "../components/Post";
-import Sidebar from "../components/Sidebar";
+import PaginationLinks from "../components/PaginationLinks";
 
-const BlogPage = () => (
-  <Layout>
+const BlogPage = () => {
+  const [numberOfPages, setnumberOfPages] = useState(0);
+  const postPerPage = 10;
+  return (
+  <BlogWrapper pageTitle="Nerd logs">
     <SEO title="Blog" />
     <StaticQuery query={indexQuery} render={ data=>{
+      setnumberOfPages(Math.ceil(data.allMarkdownRemark.totalCount/postPerPage))
         return (
-          <div className="columns">
-        <div className="column is-two-thirds">
-          {data.allMarkdownRemark.edges.map(({node},index) => (
+            data.allMarkdownRemark.edges.map(({node},index) => (
             <Post key={index} title={node.frontmatter.title}
             author={node.frontmatter.author}
             slug={node.fields.slug}
@@ -22,21 +24,18 @@ const BlogPage = () => (
             fluid={node.frontmatter.image.childImageSharp.fluid}
             tags={node.frontmatter.tags}
             />
-          ))}
-        </div >
-        <div className="is-hidden-mobile column is-one-third blog-sidebar">
-        <Sidebar/>
-        </div>
-            
-        </div>
+          ))
         )
       }}/>
-  </Layout>
-)
+    <PaginationLinks currentPage={1} numberOfPages={numberOfPages}/>
+  </BlogWrapper>
+  )
+}
 
 const indexQuery = graphql`{
   allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}
-    limit:1 ) {
+    limit:10 ) {
+    totalCount
     edges {
       node {
         id
