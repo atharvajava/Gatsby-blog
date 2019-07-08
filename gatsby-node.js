@@ -28,7 +28,8 @@ exports.createPages= ({actions,graphql})=> {
     const templates = {
         singlePost: path.resolve("src/templates/single-post.js"),
         tagsPage: path.resolve("src/templates/tags-page.js"),
-        tagPosts: path.resolve("src/templates/tag-posts.js")
+        tagPosts: path.resolve("src/templates/tag-posts.js"),
+        postList: path.resolve("src/templates/post-list.js")
     }
 
     return graphql (
@@ -53,7 +54,7 @@ exports.createPages= ({actions,graphql})=> {
         if(res.errors) return Promise.reject(res.errors)
         const posts= res.data.allMarkdownRemark.edges
         posts.forEach(({node})=>{
-            console.log(authors.find(x=> x.name === node.frontmatter.author).imageUrl)
+
             createPage({
                 path: node.fields.slug,
                 component: templates.singlePost,
@@ -97,6 +98,27 @@ exports.createPages= ({actions,graphql})=> {
                 component: templates.tagPosts,
                 context: {
                     tag
+                }
+            })
+        })
+
+
+        const postsPerPage = 1
+        const numberOfPages = Math.ceil(posts.length/ postsPerPage)
+        
+        Array.from({ length: numberOfPages }).forEach((_, index) => {
+            const isFirstPage = index === 0 
+            const currentPage = index + 1
+            console.log(currentPage)
+            if(isFirstPage) return
+
+            createPage({
+                path: `/blog/${currentPage}`,
+                component: templates.postList,
+                context: {
+                    limit: postsPerPage,
+                    skip: index * postsPerPage,
+                    currentPage
                 }
             })
         })

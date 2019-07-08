@@ -35,7 +35,8 @@ const BlogPage = () => (
 )
 
 const indexQuery = graphql`{
-  allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
+  allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}
+    limit:1 ) {
     edges {
       node {
         id
