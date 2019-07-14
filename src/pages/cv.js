@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 const CVPage = () => (
   <Layout>
     <SEO title="CV" />
-    <h1>CV</h1>
+    <p className="is-size-2 other-page-title">CV</p>
   </Layout>
 )
 

@@ -27,7 +27,7 @@ const BlogWrapper = ({ children,pageTitle }) => {
           <main>
           <div className="columns">
             <div className="column is-two-thirds">
-                <p style={{textDecoration:"underline", textShadow:"2px 2px 4px #000000"}} className="is-size-1 has-text-centered is-uppercase"><b>{pageTitle}</b></p>
+                <p className="is-size-1 has-text-centered is-uppercase other-page-title">{pageTitle}</p>
                 {children}
             </div>
                 <div className="is-hidden-mobile column is-one-third blog-sidebar">
