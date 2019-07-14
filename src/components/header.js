@@ -54,16 +54,12 @@ const Header = ({ siteTitle }) => {
         About
         </Link>
 
-      <Link to="/portfolio" className="navbar-item button">
-        Portfolio
-        </Link>
-
       <Link to="/blog" className="navbar-item button">
         Blog
         </Link>
 
-      <Link to="/cv"  className="navbar-item button">
-        CV
+      <Link to="/resume"  className="navbar-item button">
+        Resume
         </Link>
 
       <Link to="/login" className="navbar-item button">
