@@ -2,6 +2,8 @@
 @import "./components/header.scss";
 @import "./components/index.scss";
 @import "./components/blog.scss";
+@import "./components/about.scss";
+
 @font-face {
     font-family:"Hack";
     src: url("./fonts/Hack/Hack\ Regular\ Nerd\ Font\ Complete.ttf") /* TTF file for CSS3 browsers */
@@ -23,4 +25,10 @@ body {
   height: 50px;
   bottom: 0;
   width: 100%;
+}
+
+.other-page-title {
+    text-decoration:underline;
+    text-shadow:2px 2px 4px #000000;
+    font-weight: bold;
 }

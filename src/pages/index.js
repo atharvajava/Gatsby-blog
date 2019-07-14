@@ -4,7 +4,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 //import intro from "../images/intro.png"
 import Typed from 'react-typed';
-import Img from "gatsby-image"
+import Img from "gatsby-image";
+import { graphql } from "gatsby";
 
 
 const IndexPage = ({data}) => {
@@ -50,7 +51,7 @@ export const query = graphql`
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
