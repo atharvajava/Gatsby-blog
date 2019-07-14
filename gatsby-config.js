@@ -18,6 +18,18 @@ module.exports = {
     `gatsby-plugin-polyfill-io`,
     `gatsby-plugin-netlify-cache`,
     {
+      resolve: 'gatsby-plugin-netlify',
+      options: {
+        headers: {
+          '/*': [
+            "Content-Security-Policy: frame-ancestors 'self' https://*.atharvapandey.com/",
+            "X-Frame-Options: ALLOW-FROM https://*.atharvapandey.com/",
+          ]
+        },
+        mergeSecurityHeaders: true,
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
