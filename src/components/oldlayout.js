@@ -12,14 +12,10 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Footer from "./Footer"
 import "../styles/main.scss"
-import { useNetlifyIdentity, IdentityContextProvider } from "react-netlify-identity-widget"
-import "react-netlify-identity-widget/styles.css"
 
 const Layout = ({ children }) => {
-  const URL = "https://www.atharvapandey.com"
-  const identity = useNetlifyIdentity(URL)
   const data = useStaticQuery(graphql`
-    query SiteProtectedTitleQuery {
+    query SiteTitleQuery {
       site {
         siteMetadata {
           title
@@ -31,12 +27,10 @@ const Layout = ({ children }) => {
   return (
     <>
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-    <IdentityContextProvider url={URL} value={identity}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div className="container">
         <main>{children}</main><br/><br/>
       </div>
-    </IdentityContextProvider>
       <Footer/>
     </>
   )

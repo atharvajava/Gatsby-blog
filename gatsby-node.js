@@ -23,8 +23,11 @@ exports.onCreateNode = ({ node, actions}) => {
     }
 }
 
+// Implement the Gatsby API “onCreatePage”. This is
+// called after every page is created.
 exports.createPages= ({actions,graphql})=> {
     const { createPage } = actions;
+
     const templates = {
         singlePost: path.resolve("src/templates/single-post.js"),
         tagsPage: path.resolve("src/templates/tags-page.js"),

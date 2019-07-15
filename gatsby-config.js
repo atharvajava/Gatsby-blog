@@ -18,6 +18,10 @@ module.exports = {
     `gatsby-plugin-polyfill-io`,
     `gatsby-plugin-netlify-cache`,
     {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/app/*`] },
+    },
+    {
       resolve: 'gatsby-plugin-netlify',
       options: {
         headers: {
