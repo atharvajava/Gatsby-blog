@@ -1,16 +1,20 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import Layout from "../components/oldlayout"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import Img from "gatsby-image";
 
+
+
 const AboutPage = ({data}) => (
   <Layout>
     <SEO title="About" />
-    <p className="is-size-2 other-page-title">ABOUT ME</p>
+    
     <div className="columns is-desktop">
+      
       <div className="column">
+        <p className="is-size-1 has-text-centered is-uppercase other-page-title">ABOUT ME</p><br/><br/>
         <br/>
         <p>
         I am a full stack developer based in Germany. I live in Paderborn.
@@ -38,16 +42,64 @@ const AboutPage = ({data}) => (
       </div>
     </div>
     <span className="about-line"></span>
-    <div className="columns">
-      <div className="column"><Img className="about-skill-logo" fluid={data.sql.childImageSharp.fluid}/></div>
-      <div className="column"><Img className="about-skill-logo" fluid={data.mongo.childImageSharp.fluid}/></div>
-      <div className="column"><Img className="about-skill-logo" fluid={data.vue.childImageSharp.fluid}/></div>
-      <div className="column"><Img className="about-skill-logo" fluid={data.angular.childImageSharp.fluid}/></div>
-      <div className="column"><Img className="about-skill-logo" fluid={data.react.childImageSharp.fluid}/></div>
-      <div className="column"><Img className="about-skill-logo" fluid={data.golang.childImageSharp.fluid}/></div>
-      <div className="column"><Img className="about-skill-logo" fluid={data.python.childImageSharp.fluid}/></div>
-      <div className="column"><Img className="about-skill-logo" fluid={data.java.childImageSharp.fluid}/></div>
-    </div>
+    <div className="about-slider">
+	<div className="slide-track">
+		<div className="slide">
+      <Img className="about-skill-logo" fluid={data.sql.childImageSharp.fluid} height="100" width="250" alt=""/>
+		</div>
+		<div className="slide">
+      <Img className="about-skill-logo" fluid={data.mongo.childImageSharp.fluid} height="100" width="250" alt=""/>
+		</div>
+		<div className="slide">
+      <Img className="about-skill-logo" fluid={data.vue.childImageSharp.fluid} height="100" width="250" alt=""/>
+		</div>
+		<div className="slide">
+      <Img className="about-skill-logo" fluid={data.angular.childImageSharp.fluid} height="100" width="250" alt=""/>
+		</div>
+		<div className="slide">
+      <Img className="about-skill-logo" fluid={data.react.childImageSharp.fluid} height="100" width="250" alt=""/>
+		</div>
+		<div className="slide">
+      <Img className="about-skill-logo" fluid={data.golang.childImageSharp.fluid} height="100" width="250" alt=""/>
+		</div>
+		<div className="slide">
+      <Img className="about-skill-logo" fluid={data.python.childImageSharp.fluid} height="100" width="250" alt=""/>
+		</div>
+		<div className="slide">
+      <Img className="about-skill-logo" fluid={data.java.childImageSharp.fluid} height="100" width="250" alt=""/>
+		</div>
+    <div className="slide">
+      <Img className="about-skill-logo" fluid={data.java.childImageSharp.fluid} height="100" width="250" alt=""/>
+		</div>
+		<div className="slide">
+      <Img className="about-skill-logo" fluid={data.sql.childImageSharp.fluid} height="100" width="250" alt=""/>
+		</div>
+		<div className="slide">
+      <Img className="about-skill-logo" fluid={data.mongo.childImageSharp.fluid} height="100" width="250" alt=""/>
+		</div>
+		<div className="slide">
+      <Img className="about-skill-logo" fluid={data.vue.childImageSharp.fluid} height="100" width="250" alt=""/>
+		</div>
+		<div className="slide">
+      <Img className="about-skill-logo" fluid={data.angular.childImageSharp.fluid} height="100" width="250" alt=""/>
+		</div>
+		<div className="slide">
+      <Img className="about-skill-logo" fluid={data.react.childImageSharp.fluid} height="100" width="250" alt=""/>
+		</div>
+		<div className="slide">
+      <Img className="about-skill-logo" fluid={data.golang.childImageSharp.fluid} height="100" width="250" alt=""/>
+		</div>
+    <div className="slide">
+      <Img className="about-skill-logo" fluid={data.python.childImageSharp.fluid} height="100" width="250" alt=""/>
+		</div>
+    <div className="slide">
+      <Img className="about-skill-logo" fluid={data.java.childImageSharp.fluid} height="100" width="250" alt=""/>
+		</div>
+    <div className="slide">
+      <Img className="about-skill-logo" fluid={data.java.childImageSharp.fluid} height="100" width="250" alt=""/>
+		</div>
+	</div>
+</div>
   </Layout>
 )
 

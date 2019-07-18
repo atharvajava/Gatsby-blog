@@ -47,30 +47,29 @@ const Header = ({ siteTitle }) => {
           </div>
 
           <div id="navbarBasicExample" className="navbar-menu">
-        <div className="navbar-end">
-          <Link to="/" className="navbar-item button">
-            Home
-          </Link>
-
-          <Link to="/about"  className="navbar-item button">
-            About
+          <div className="navbar-end">
+            <Link to="/" className="navbar-item button">
+              Home
             </Link>
 
-          <Link to="/blog" className="navbar-item button">
-            Blog
-            </Link>
+            <Link to="/about"  className="navbar-item button">
+              About
+              </Link>
 
-          <Link to="/resume"  className="navbar-item button">
-            Resume
-            </Link>
+            <Link to="/blog" className="navbar-item button">
+              Blog
+              </Link>
 
-          <button onClick={() => setDialog(true)} className="navbar-item button">
-            Login
-          </button>
-          
+            <Link to="/resume"  className="navbar-item button">
+              Resume
+              </Link>
+
+            <Link onClick={() => setDialog(true)} className="navbar-item button">
+              Login
+            </Link>
+          </div>
         </div>
-      </div>
-  </nav>
+    </nav>
   <IdentityModal showDialog={dialog} onCloseDialog={() => setDialog(false)}/>
   </header>
 )
