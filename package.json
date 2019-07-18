@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@oclif/config": "^1.13.2",
     "@reach/dialog": "^0.2.9",
     "@reach/tabs": "^0.1.6",
     "@reach/visually-hidden": "^0.1.4",
@@ -40,7 +41,10 @@
     "react-helmet": "^5.2.1",
     "react-html-parser": "^2.0.2",
     "react-netlify-identity-widget": "^0.1.4",
-    "react-typed": "^1.1.2"
+    "react-typed": "^1.1.2",
+    "remark-parse": "^6.0.3",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
