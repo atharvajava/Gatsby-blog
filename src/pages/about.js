@@ -68,9 +68,6 @@ const AboutPage = ({data}) => (
 		<div className="slide">
       <Img className="about-skill-logo" fluid={data.java.childImageSharp.fluid} height="100" width="250" alt=""/>
 		</div>
-    <div className="slide">
-      <Img className="about-skill-logo" fluid={data.java.childImageSharp.fluid} height="100" width="250" alt=""/>
-		</div>
 		<div className="slide">
       <Img className="about-skill-logo" fluid={data.sql.childImageSharp.fluid} height="100" width="250" alt=""/>
 		</div>
@@ -91,9 +88,6 @@ const AboutPage = ({data}) => (
 		</div>
     <div className="slide">
       <Img className="about-skill-logo" fluid={data.python.childImageSharp.fluid} height="100" width="250" alt=""/>
-		</div>
-    <div className="slide">
-      <Img className="about-skill-logo" fluid={data.java.childImageSharp.fluid} height="100" width="250" alt=""/>
 		</div>
     <div className="slide">
       <Img className="about-skill-logo" fluid={data.java.childImageSharp.fluid} height="100" width="250" alt=""/>
