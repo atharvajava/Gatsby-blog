@@ -6,7 +6,7 @@
   
 ### Built with gatsby and bulma
 
-The project design is highly inspired from:
+The  UI is highly inspired from:
 <a href="https://www.youtube.com/channel/UC2-slOJImuSc20Drbf88qvg">Classed</a> and Philip Jerga's udemy course design on next
 
 However, you would see various of my custom additions to the core of the project. If you use any of my code please be generous to give me credits i wont :) claim your work.
