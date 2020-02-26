@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: atharvapandey.com
+Token: 4b20e113fcd35d3daf881dc10c14a0cfe4716848a2814f8ed98c68148e0e45dd
