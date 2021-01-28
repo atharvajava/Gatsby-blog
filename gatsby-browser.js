@@ -1,10 +1,13 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+// custom typefaces
+import "typeface-montserrat"
+import "typeface-merriweather"
+// normalize CSS across browsers
+import "./src/normalize.css"
+// custom CSS styles
+import "./src/style.css"
 
-// You can delete this file if you're not using it
-import "./src/styles/main.scss"
-// gatsby-browser.js
-require("prismjs/themes/prism-dark.css")
+// Highlighting for code blocks
+import "prismjs/themes/prism.css"
+
+// tailwind
+import "./src/styles/global.css"
