@@ -11407,6 +11407,11 @@ react-tsparticles@^1.18.11:
     tslib "^2.0.3"
     tsparticles "^1.18.11"
 
+react-use-gesture@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/react-use-gesture/-/react-use-gesture-9.0.0.tgz#c3c1d011e522315da6b31c38619cd4302f41a63b"
+  integrity sha512-inTAcmX0Y8LWr7XViim5+6XlTsJ7kCgwYRrwxSu1Vkjv+8GyClHITFkGGKYXAv5QywZ8YqiJXpzFx8RZpEVF+w==
+
 react@^16.12.0:
   version "16.14.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
