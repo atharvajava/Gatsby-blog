@@ -1,19 +1,35 @@
 import React, { useState } from "react"
 import Image from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
-import {
-  VscHome,
-  VscAccount,
-  VscQuote,
-  VscTerminal,
-  VscCallIncoming,
-  VscMail,
-} from "react-icons/vsc"
-
-import { FaLinkedinIn, FaGithub } from "react-icons/fa"
+import { VscHome, VscCallIncoming, VscMail } from "react-icons/vsc"
+import { BsTextareaT, BsEye } from "react-icons/bs"
+import { IoPersonOutline } from "react-icons/io5"
+import { IoIosCodeWorking } from "react-icons/io"
+import { RiLinkedinLine } from "react-icons/ri"
+import { FiGithub } from "react-icons/fi"
+import { useTransition, animated as a } from "react-spring"
+import { useHover } from "react-use-gesture"
 
 const Navigation = () => {
   const [showIcon, setShowIcon] = useState("")
+
+  const bind = useHover(({ hovering, args }) => {
+    hovering ? setShowIcon(args[0]) : setShowIcon("")
+  })
+
+  const transitions = useTransition(showIcon, null, {
+    config: { tension: 120, friction: 14 },
+    initial: { opacity: 1, transform: "translate3d(0%,0,0)" },
+    from: {
+      position: "absolute",
+      opacity: 0,
+      transform: "translate3d(100%,0,0)",
+    },
+    enter: { opacity: 1, transform: "translate3d(0%,0,0)" },
+    leave: { opacity: 0, transform: "translate3d(-50%,0,0)" },
+    unique: true,
+  })
+
   const data = useStaticQuery(graphql`
     query NavQuery {
       logo: file(absolutePath: { regex: "/logo_a.png/" }) {
@@ -26,6 +42,14 @@ const Navigation = () => {
     }
   `)
 
+  const navItems = {
+    HOME: <VscHome className="text-4xl" />,
+    ABOUT: <IoPersonOutline className="text-4xl" />,
+    BLOG: <BsTextareaT className="text-4xl" />,
+    SKILLS: <IoIosCodeWorking className="text-4xl" />,
+    WORKS: <BsEye className="text-4xl" />,
+  }
+
   const logo = data?.logo?.childImageSharp?.fixed
   return (
     <div className="fixed m-2 flex flex-col justify-between h-screen">
@@ -35,67 +59,37 @@ const Navigation = () => {
 
       <div className="flex-1 mx-2">
         <div className="grid gap-4">
-          <p
-            className="h-9"
-            onMouseEnter={() => setShowIcon("home")}
-            onMouseLeave={() => setShowIcon("")}
-          >
-            {showIcon == "home" ? "HOME" : <VscHome className="text-4xl" />}
-          </p>
-          <p
-            className="h-9"
-            onMouseEnter={() => setShowIcon("about")}
-            onMouseLeave={() => setShowIcon("")}
-          >
-            {showIcon == "about" ? (
-              "ABOUT"
-            ) : (
-              <VscAccount className="text-4xl" />
-            )}
-          </p>
-          <p
-            className="h-9"
-            onMouseEnter={() => setShowIcon("blog")}
-            onMouseLeave={() => setShowIcon("")}
-          >
-            {showIcon == "blog" ? "BLOG" : <VscQuote className="text-4xl" />}
-          </p>
-          <p
-            className="h-9"
-            onMouseEnter={() => setShowIcon("skills")}
-            onMouseLeave={() => setShowIcon("")}
-          >
-            {showIcon == "skills" ? (
-              "SKILLS"
-            ) : (
-              <VscTerminal className="text-4xl" />
-            )}
-          </p>
-          <p
-            className="h-9"
-            onMouseEnter={() => setShowIcon("contact")}
-            onMouseLeave={() => setShowIcon("")}
-          >
-            {showIcon == "contact" ? (
-              "CONTACT"
-            ) : (
-              <VscCallIncoming className="text-4xl" />
-            )}
-          </p>
+          {Object.entries(navItems).map(([navItem, value], idx) => {
+            return (
+              <a.div key={idx} className="h-9" {...bind(navItem)}>
+                {transitions.map(({ item, key, props }) =>
+                  item === navItem ? (
+                    <a.div key={key} style={props}>
+                      {item}
+                    </a.div>
+                  ) : (
+                    <a.div key={key} style={props}>
+                      {value}
+                    </a.div>
+                  )
+                )}
+              </a.div>
+            )
+          })}
         </div>
       </div>
 
       <div className="flex-3 my-10 mx-2">
         <div className="grid gap-5">
-          <p>
-            <FaGithub className="text-4xl hover:text-gray-400" />
-          </p>
-          <p>
-            <FaLinkedinIn className="text-4xl hover:text-gray-400" />
-          </p>
-          <p>
+          <a>
+            <FiGithub className="text-4xl hover:text-gray-400" />
+          </a>
+          <a>
+            <RiLinkedinLine className="text-4xl hover:text-gray-400" />
+          </a>
+          <a>
             <VscMail className="text-4xl hover:text-gray-400" />
-          </p>
+          </a>
         </div>
       </div>
     </div>
