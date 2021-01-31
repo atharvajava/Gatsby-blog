@@ -7,7 +7,7 @@ const Index = () => {
     <Particles>
       <Navigation />
       <div className="flex flex-wrap content-center justify-center h-screen w-screen">
-        <p className="text-center leading-none text-8xl">
+        <div className="text-center leading-none text-8xl">
           Hola, I'm
           <br />
           <span className="opacity-30 hover:opacity-70 transition-opacity duration-1000 ease-out leading-none">
@@ -25,7 +25,7 @@ const Index = () => {
               Read Blog
             </button>
           </div>
-        </p>
+        </div>
       </div>
     </Particles>
   )

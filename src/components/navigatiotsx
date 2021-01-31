@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Image from "gatsby-image"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import { VscHome, VscMail } from "react-icons/vsc"
+import { useStaticQuery, graphql } from "gatsby"
+import { VscHome, VscCallIncoming, VscMail } from "react-icons/vsc"
 import { BsTextareaT, BsEye } from "react-icons/bs"
 import { IoPersonOutline } from "react-icons/io5"
 import { IoIosCodeWorking } from "react-icons/io"
@@ -19,13 +19,14 @@ const Navigation = () => {
 
   const transitions = useTransition(showIcon, null, {
     config: { tension: 120, friction: 14 },
-    initial: { opacity: 1 },
+    initial: { opacity: 1, transform: "translate3d(0%,0,0)" },
     from: {
       position: "absolute",
       opacity: 0,
+      transform: "translate3d(100%,0,0)",
     },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
+    enter: { opacity: 1, transform: "translate3d(0%,0,0)" },
+    leave: { opacity: 0, transform: "translate3d(-50%,0,0)" },
     unique: true,
   })
 
@@ -48,7 +49,7 @@ const Navigation = () => {
     SKILLS: <IoIosCodeWorking className="text-4xl" />,
     WORKS: <BsEye className="text-4xl" />,
   }
-  //TODO: This component nav icons are not working properly it has trailing animation
+
   const logo = data?.logo?.childImageSharp?.fixed
   return (
     <div className="fixed m-2 flex flex-col justify-between h-screen">
@@ -64,7 +65,7 @@ const Navigation = () => {
                 {transitions.map(({ item, key, props }) =>
                   item === navItem ? (
                     <a.div key={key} style={props}>
-                      <Link to={item.toLowerCase()}>{item}</Link>
+                      {item}
                     </a.div>
                   ) : (
                     <a.div key={key} style={props}>
