@@ -14,6 +14,7 @@ const Navigation = () => {
   const [showIcon, setShowIcon] = useState("")
 
   const bind = useHover(({ hovering, args }) => {
+    console.log("working")
     hovering ? setShowIcon(args[0]) : setShowIcon("")
   })
 
@@ -51,7 +52,7 @@ const Navigation = () => {
   //TODO: This component nav icons are not working properly it has trailing animation
   const logo = data?.logo?.childImageSharp?.fixed
   return (
-    <div className="fixed m-2 flex flex-col justify-between h-screen">
+    <nav className="fixed z-50 m-2 flex flex-col justify-between h-screen">
       <div className="flex-1 hover:animate-pulse">
         {logo && <Image fixed={logo} alt={`A`} />}
       </div>
@@ -64,7 +65,11 @@ const Navigation = () => {
                 {transitions.map(({ item, key, props }) =>
                   item === navItem ? (
                     <a.div key={key} style={props}>
-                      <Link to={item.toLowerCase()}>{item}</Link>
+                      <Link
+                        to={item === "HOME" ? "/" : "/" + item.toLowerCase()}
+                      >
+                        {item}
+                      </Link>
                     </a.div>
                   ) : (
                     <a.div key={key} style={props}>
@@ -91,7 +96,7 @@ const Navigation = () => {
           </a>
         </div>
       </div>
-    </div>
+    </nav>
   )
 }
 
