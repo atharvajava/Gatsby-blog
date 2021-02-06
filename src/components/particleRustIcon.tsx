@@ -5,13 +5,14 @@ import "pathseg"
 
 const ParticleRustIcon = () => {
   return (
-    <div className="absolute z-1 h-screen">
+    <div className="top-0 bottom-0 left-0 right-0 mx-48  h-full w-full absolute">
       <ReactParticles
         id="tsparticles"
-        className="flex justify-center items-center"
+        className="-my-72 py-10 relative"
         options={{
           fps_limit: 60,
           background: {
+            opacity: 0,
             color: {
               value: "#ffffff",
             },
@@ -39,7 +40,7 @@ const ParticleRustIcon = () => {
               enable: true,
               outMode: "bounce",
               random: false,
-              speed: 0.1,
+              speed: 1,
               straight: false,
             },
             opacity: {
@@ -54,7 +55,7 @@ const ParticleRustIcon = () => {
           },
           polygon: {
             enable: true,
-            scale: 0.5,
+            scale: 0.55,
             type: "inline",
             move: {
               radius: 10,

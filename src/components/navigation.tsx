@@ -2,11 +2,11 @@ import React, { useState } from "react"
 import Image from "gatsby-image"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { VscHome, VscMail } from "react-icons/vsc"
-import { BsTextareaT, BsEye } from "react-icons/bs"
+import { BsTextareaT } from "react-icons/bs"
 import { IoPersonOutline } from "react-icons/io5"
 import { IoIosCodeWorking } from "react-icons/io"
 import { RiLinkedinLine } from "react-icons/ri"
-import { FiGithub } from "react-icons/fi"
+import { FiGithub, FiTwitter } from "react-icons/fi"
 import { useTransition, animated as a } from "react-spring"
 import { useHover } from "react-use-gesture"
 
@@ -20,7 +20,7 @@ const Navigation = () => {
 
   const transitions = useTransition(showIcon, null, {
     config: { tension: 120, friction: 14 },
-    initial: { opacity: 1 },
+    initial: { position: "absolute", opacity: 1 },
     from: {
       position: "absolute",
       opacity: 0,
@@ -47,7 +47,7 @@ const Navigation = () => {
     ABOUT: <IoPersonOutline className="text-4xl" />,
     BLOG: <BsTextareaT className="text-4xl" />,
     SKILLS: <IoIosCodeWorking className="text-4xl" />,
-    WORKS: <BsEye className="text-4xl" />,
+    CONTACT: <VscMail className="text-4xl" />,
   }
   //TODO: This component nav icons are not working properly it has trailing animation
   const logo = data?.logo?.childImageSharp?.fixed
@@ -92,7 +92,7 @@ const Navigation = () => {
             <RiLinkedinLine className="text-4xl hover:text-gray-400" />
           </a>
           <a>
-            <VscMail className="text-4xl hover:text-gray-400" />
+            <FiTwitter className="text-4xl hover:text-gray-400" />
           </a>
         </div>
       </div>
