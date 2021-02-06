@@ -8,6 +8,7 @@ export const Particles = ({ children }) => {
         id="tsparticles"
         options={{
           background: {
+            opacity: 0,
             color: {
               value: "#ffffff",
             },
@@ -86,11 +87,7 @@ export const Particles = ({ children }) => {
         }}
         style={{
           position: "absolute",
-          zIndex: -2,
-          left: 100,
-          right: 100,
-          bottom: 100,
-          top: 100,
+          zIndex: "-1",
         }}
       />
       {children && <div style={{ position: "relative" }}>{children}</div>}

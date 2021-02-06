@@ -1,6 +1,7 @@
 import React from "react"
 import Navigation from "../components/navigation"
 import { Particles } from "../components/particle"
+import { Link } from "gatsby"
 
 const Index = () => {
   return (
@@ -17,13 +18,19 @@ const Index = () => {
             </p>
           </span>
           <div>
-            <button className="uppercase text-xl px-8 py-2 border border-black text-black max-w-max shadow-sm hover:shadow-lg rounded">
+            <Link
+              to="/contact"
+              className=" uppercase text-xl px-8 py-2 border focus:outline-none border-black text-black max-w-max shadow-sm hover:shadow-lg rounded"
+            >
               Contact
-            </button>
+            </Link>
             &nbsp;
-            <button className="uppercase text-xl px-8 py-2 border border-black text-black max-w-max shadow-sm hover:shadow-lg rounded">
+            <Link
+              to="/blog"
+              className=" uppercase text-xl px-8 py-2 border focus:outline-none border-black text-black max-w-max shadow-sm hover:shadow-lg rounded"
+            >
               Read Blog
-            </button>
+            </Link>
           </div>
         </div>
       </div>
