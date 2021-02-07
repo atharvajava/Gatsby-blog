@@ -29,7 +29,7 @@ const About = ({ data, location }: Props) => {
           <div className="h-screen flex justify-center items-center">
             <div className="grid grid-cols-2 gap-12">
               <span>
-                <h1 className="text-6xl font-mono">CONTACT ME</h1>
+                <header className="text-6xl font-mono">CONTACT ME</header>
                 <p className="text-justify py-6 leading-normal">
                   I am interested in innovative projects - especially blockchain
                   related projects. You can also mail me to say howdy or just to

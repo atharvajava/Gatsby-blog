@@ -3,8 +3,9 @@ import { graphql } from "gatsby"
 
 import SEO from "../components/seo"
 import Navigation from "../components/navigation"
-import TagsCanvas from "react-tags-canvas"
+import Loadable from "@loadable/component"
 
+const TagsCanvas = Loadable(() => import("react-tags-canvas"))
 interface Props {
   location: Location
   data: {
@@ -26,7 +27,7 @@ const About = ({ data, location }: Props) => {
           <div className="h-screen flex justify-center items-center">
             <div className="grid grid-cols-2">
               <span>
-                <h1 className="text-6xl font-mono">SKILLSET</h1>
+                <header className="text-6xl font-mono">SKILLSET</header>
                 <p className="text-justify py-6 leading-normal">
                   I consider myself a full-stack developer.Though, I am more
                   experienced with the backend professionally.

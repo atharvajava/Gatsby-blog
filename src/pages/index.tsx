@@ -2,10 +2,12 @@ import React from "react"
 import Navigation from "../components/navigation"
 import { Particles } from "../components/particle"
 import { Link } from "gatsby"
+import SEO from "../components/seo"
 
 const Index = () => {
   return (
     <Particles>
+      <SEO title="Atharva Pandey, Full Stack Developer Blockchain, Defi" />
       <Navigation />
       <div className="flex flex-wrap content-center justify-center h-screen w-screen">
         <div className="text-center leading-none text-8xl">
@@ -13,9 +15,9 @@ const Index = () => {
           <br />
           <span className="opacity-30 hover:opacity-70 transition-opacity duration-1000 ease-out leading-none">
             Atharva
-            <p className="text-xl leading-none">
+            <header className="text-xl leading-none">
               Full Stack Developer / Blockchain / Rust Enthusiast
-            </p>
+            </header>
           </span>
           <div>
             <Link

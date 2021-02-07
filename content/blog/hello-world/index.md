@@ -142,6 +142,15 @@ This is a paragraph.
 - **bold** goes here
 ```
 
+```rust
+fn main() {
+    if a===b {
+
+    }
+    println!("Hello World")
+}
+```
+
 1. Buy flour and salt
 1. Mix together with water
 1. Bake

@@ -27,7 +27,7 @@ const About = ({ data, location }: Props) => {
           <div className="h-screen flex justify-center items-center">
             <div className="grid grid-cols-2">
               <span>
-                <h1 className="text-6xl font-mono">ABOUT ME</h1>
+                <header className="text-6xl font-mono">ABOUT ME</header>
                 <p className="text-justify py-6 leading-normal">
                   I have been connected to IT and Computer Science, since my
                   highschool. I consider myself a polyglot and know several

@@ -1,22 +1,21 @@
-import React, { useState } from "react"
+import React from "react"
 import {
   ComposableMap,
   Geographies,
   Geography,
   Annotation,
 } from "react-simple-maps"
-import { useHover } from "react-use-gesture"
 
 const geoUrl =
-  "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json"
+  "https://raw.githubusercontent.com/deldersveld/topojson/master/countries/germany/germany-regions.json"
 
 const ContactMap = () => {
   return (
     <ComposableMap
       projection="geoAzimuthalEqualArea"
       projectionConfig={{
-        rotate: [-20.0, -52.0, 0],
-        scale: 700,
+        rotate: [-10.0, -51.0, 0],
+        scale: 4000,
       }}
     >
       <Geographies
@@ -55,6 +54,7 @@ const ContactMap = () => {
           ))
         }
       </Geographies>
+
       <Annotation
         subject={[13.405, 52.52]}
         dx={-90}
