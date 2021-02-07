@@ -6,6 +6,7 @@ module.exports = {
       sans: ["Graphik", "sans-serif"],
       serif: ["Merriweather", "serif"],
       mono: ["Fira Code", "monospace"],
+      apple: ["-apple-system", "sans-serif"],
     },
     zIndex: {
       0: 0,

@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Comment from "./comments"
 
 interface Props {
   location: Location
@@ -26,19 +27,21 @@ const BlogPostTemplate = ({ data, location }: Props) => {
   const { previous, next } = data
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
       <article
-        className="blog-post"
+        className="font-apple"
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+        <header className="border-8 border-black  py-10 text-center mb-10">
+          <h1 className="text-5xl" itemProp="headline">
+            {post.frontmatter.title}
+          </h1>
+          <p className="font-bold">{post.frontmatter.date}</p>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -75,6 +78,8 @@ const BlogPostTemplate = ({ data, location }: Props) => {
           </li>
         </ul>
       </nav>
+
+      <Comment></Comment>
     </Layout>
   )
 }

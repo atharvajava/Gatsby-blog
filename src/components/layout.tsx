@@ -1,43 +1,26 @@
 import React from "react"
-import { Link } from "gatsby"
+
 import Navigation from "./navigation"
 
 interface Props {
   location: Location
-  title: string
   children?: any
 }
 
-const Layout = ({ location, title, children }: Props) => {
+const Layout = ({ location, children }: Props) => {
   // @ts-ignore
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
-  let header
-
-  if (isRootPath) {
-    header = (
-      <h1 className="main-heading">
-        <Link to="/">{title}</Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <Link className="header-link-home" to="/">
-        {title}
-      </Link>
-    )
-  }
 
   return (
     <React.Fragment>
       <Navigation />
-      <div data-is-root-path={isRootPath}>
-        <header className="global-header">{header}</header>
+      <div className="global-wrapper" data-is-root-path={isRootPath}>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
+          © {new Date().getFullYear()}, Built by
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <a href="https://atharvapandey.com">Atharva Pandey</a>
         </footer>
       </div>
     </React.Fragment>
