@@ -73,7 +73,7 @@ module.exports = {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
-    `gatsby-plugin-feed`,
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -84,6 +84,19 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
+      },
+    },
+    {
+      resolve: `@conradlin/gatsby-source-notion-database`,
+      options: {
+        sourceConfig: [
+          {
+            name: "posts",
+            table:
+              "https://www.notion.so/365b2f998ebc4fe0a43e623d7e5e0ee0?v=914ef3f0f30b406c90353d54301fafb6",
+            cacheType: "html",
+          },
+        ],
       },
     },
     `gatsby-plugin-react-helmet`,

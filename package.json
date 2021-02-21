@@ -8,6 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@conradlin/gatsby-source-notion-database": "^0.7.5",
     "@loadable/component": "^5.14.1",
     "@rooks/use-window-size": "^4.8.0",
     "autoprefixer": "^10.2.3",
